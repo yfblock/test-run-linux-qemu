@@ -21,8 +21,8 @@ wget https://cdimage.debian.org/cdimage/cloud/bullseye/20250528-2126/debian-11-n
 
 > 可以根据需要对参数进行调整，进入系统后**用户名为 root，密码为空，直接回车可以进入系统**，如果需要传输程序，可以有多种方法，
 
-- 创建一个 img 文件，然后塞入需要使用的程序，再 qemu 启动后的 guest 里挂载
 - 再 guest 中安装 ssh，然后利用 scp 和 ssh 传输和运行，注意这里将 guest 的 22 端口映射到宿主机的 2222
+- 创建一个 img 文件，然后塞入需要使用的程序，利用 `-drive file=xxx.img` 指定，在 qemu 启动后的 guest 里挂载
 - 利用 9pfs 再 host 和 guest 之间共享
 
 ## 参考资料
